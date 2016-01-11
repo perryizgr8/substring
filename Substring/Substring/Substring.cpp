@@ -52,7 +52,7 @@ int numOccur(string text, string pattern)
 
 bool compareFreq(string one, string two)
 {
-	char count1[256] = { 0 }, count2[256] = { 0 };
+	int count1[256] = { 0 }, count2[256] = { 0 };
 	int length1 = one.length();
 	int length2 = two.length();
 	for (int i = 0; i < length1; i++)
