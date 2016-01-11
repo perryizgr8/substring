@@ -39,14 +39,9 @@ int numOccur(string text, string pattern)
 	int textLength = text.length();
 	for (int i = 0; i <= (textLength - patLength); i++)
 	{
-		//cout << i <<endl;
-		start = i;
-		end = i + (patLength - 1);
-		if (compareFreq(pattern, text.substr(start, end)) == true)
+		for (int j = patLength; j <= textLength - i; j++)
 		{
-			//cout << "found";
-			res++;
-			for (int j = i + (patLength - 1); j <= textLength - (i + 1); j++)
+			if (compareFreq(pattern, text.substr(i, j)) == true)
 			{
 				res++;
 			}
@@ -70,7 +65,7 @@ bool compareFreq(string one, string two)
 	}
 	for (int i = 0; i < 256; i++)
 	{
-		if (count1[i] <= count2[i])
+		if (count1[i] > count2[i])
 		{
 			return false;
 		}
